@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gerenciamento de localStorage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      padding: 0;
+      background-color: #f4f4f9;
+      color: #333;
+    }
+    h1 {
+      color: #444;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    button {
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    button.delete {
+      background-color: #dc3545;
+    }
+    button.delete:hover {
+      background-color: #c82333;
+    }
+    button.back {
+      background-color: #000; /* Botão preto */
+      color: white;
+    }
+    button.back:hover {
+      background-color: #333; /* Efeito hover mais escuro */
+    }
+    input[type="file"] {
+      display: none;
+    }
+    .info {
+      margin-top: 20px;
+      font-size: 14px;
+      color: #666;
+    }
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    .modal-buttons {
+      margin-top: 20px;
+    }
+    .modal-buttons button {
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <h1>Gerenciamento de localStorage</h1>
+  <button onclick="exportLocalStorage()">Exportar Dados</button>
+  <button onclick="document.getElementById('importFile').click()">Importar Dados</button>
+  <button class="delete" onclick="showDeleteModal()">Apagar Dados</button>
+  <button class="back" onclick="window.location.href='index.html'">Voltar para a Página Inicial</button>
+  <input type="file" id="importFile" accept=".json" />
+
+  <div class="info">
+    <p><strong>Exportar:</strong> Gera um arquivo JSON com todos os dados do localStorage.</p>
+    <p><strong>Importar:</strong> Carrega um arquivo JSON para restaurar os dados no localStorage.</p>
+    <p><strong>Apagar:</strong> Remove todos os dados do localStorage.</p>
+  </div>
+</div>
+
+<!-- Modal de confirmação para apagar dados -->
+<div id="deleteModal" class="modal">
+  <div class="modal-content">
+    <h2>Tem certeza que deseja apagar todos os dados?</h2>
+    <p>Esta ação não pode ser desfeita.</p>
+    <div class="modal-buttons">
+      <button onclick="deleteLocalStorage()">Sim, Apagar</button>
+      <button onclick="hideDeleteModal()">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Exportar localStorage
+  function exportLocalStorage() {
+    const data = {};
+
+    // Coleta todos os dados do localStorage
+    for (let i = 0; i < localStorage.length; i++) {
+      const key = localStorage.key(i);
+      const value = localStorage.getItem(key);
+      data[key] = value;
+    }
+
+    // Converte os dados para JSON
+    const jsonData = JSON.stringify(data, null, 2);
+
+    // Cria um arquivo para download
+    const blob = new Blob([jsonData], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'localStorage_backup.json'; // Nome do arquivo
+    a.click(); // Inicia o download
+
+    // Libera o objeto URL
+    URL.revokeObjectURL(url);
+
+    alert('Dados exportados com sucesso!');
+  }
+
+  // Importar localStorage
+  function importLocalStorage(event) {
+    const file = event.target.files[0];
+
+    if (!file) {
+      alert('Nenhum arquivo selecionado.');
+      return;
+    }
+
+    const reader = new FileReader();
+
+    // Lê o conteúdo do arquivo
+    reader.onload = function (e) {
+      const jsonData = e.target.result;
+
+      try {
+        const data = JSON.parse(jsonData); // Converte o JSON para objeto
+
+        // Restaura os dados no localStorage
+        for (const key in data) {
+          if (data.hasOwnProperty(key)) {
+            localStorage.setItem(key, data[key]);
+          }
+        }
+
+        alert('Dados importados com sucesso!');
+        window.location.reload(); // Recarrega a página para refletir as mudanças
+      } catch (error) {
+        alert('Erro ao importar dados: arquivo inválido.');
+      }
+    };
+
+    reader.readAsText(file); // Lê o arquivo como texto
+  }
+
+  // Mostrar modal de confirmação para apagar dados
+  function showDeleteModal() {
+    const modal = document.getElementById('deleteModal');
+    modal.style.display = 'flex';
+  }
+
+  // Esconder modal de confirmação
+  function hideDeleteModal() {
+    const modal = document.getElementById('deleteModal');
+    modal.style.display = 'none';
+  }
+
+  // Apagar localStorage
+  function deleteLocalStorage() {
+    localStorage.clear(); // Remove todos os dados do localStorage
+    alert('Todos os dados foram apagados com sucesso!');
+    hideDeleteModal(); // Fecha o modal
+    window.location.reload(); // Recarrega a página para refletir as mudanças
+  }
+
+  // Adiciona o evento ao input de arquivo
+  document.getElementById('importFile').addEventListener('change', importLocalStorage);
+</script>
+</body>
+</html>
