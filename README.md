@@ -39,7 +39,7 @@ Projeto desenvolvido como parte do minicurso de **Desenvolvimento Web** para a E
 
 - **HTML5**: Estrutura da aplicação.
 - **CSS3**: Estilização e layout responsivo.
-- **JavaScript (ES6+)**: Lógica e interatividade.
+- **JavaScript**: Lógica e interatividade.
 - **LocalStorage**: Armazenamento de dados no navegador (filmes, favoritos e assistidos).
 
 ---
@@ -56,7 +56,13 @@ Projeto desenvolvido como parte do minicurso de **Desenvolvimento Web** para a E
 
 3. **Acesse a página index.html**
 - No canto inferior direito, você verá um botão discreto chamado **"Local Store Management"**. Ele serve para que você possa **`exportar, importar e apagar`** os dados salvos no localStorage.
-  Para facilitar a adição de filmes, deixamos um arquivo chamado `localStorage_backup.json` disponível. Com ele, você pode importar os filmes rapidamente, sem precisar adicioná-los manualmente. Isso proporciona uma maneira prática e eficiente de gerenciar seus dados no aplicativo.
+  Para facilitar a adição de filmes, deixei um arquivo chamado `localStorage_backup.json` disponível. Com ele, você pode importar os filmes rapidamente para visualisar, sem precisar adicioná-los manualmente.
+
+## Teste sem Clonar o Projeto
+Você pode testar o projeto diretamente no navegador acessando o link:
+[FILM.FY PAGE](https://lu1pinho.github.io/film-fy-epic/src/pages/index.html)
+
+Dessa forma, você pode experimentar as funcionalidades sem precisar clonar o repositório.
 
 ## Estrutura do Projeto
 ``` text
