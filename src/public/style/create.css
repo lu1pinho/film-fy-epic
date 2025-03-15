@@ -1,0 +1,363 @@
+@import url('https://fonts.googleapis.com/css2?family=Inria+Sans:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000513;
+    color: white;
+    font-family: "Inria Sans", sans-serif;
+    line-height: 1.6;
+}
+
+header {
+    width: 100%;
+    height: 60px;
+    background-color: #0F0F0F;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo a {
+    font-size: 25px;
+    color: white;
+    text-decoration: none;
+    font-family: "Mona Sans", sans-serif;
+    font-weight: bold;
+}
+
+.searchbar {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.searchbar .input input {
+    width: 30vw;
+    height: 35px;
+    padding: 10px 40px 10px 10px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: #1C1C1C;
+    color: white;
+    font-family: "Inria Sans", sans-serif;
+}
+
+.searchbar .input input::placeholder {
+    color: #888;
+}
+
+.searchbar .icon img {
+    width: 18px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.social img {
+    width: 25px;
+    height: 25px;
+    filter: invert(1);
+    opacity: 50%;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.social img:hover {
+    opacity: 1;
+}
+
+main.add-movie {
+    padding: 100px 50px 50px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    font-family: "Mona Sans", sans-serif;
+}
+
+.form-container {
+    display: flex;
+    gap: 40px;
+}
+
+.movie-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.line {
+    display: flex;
+    gap: 15px;
+}
+
+.line input {
+    width: 12vw;
+}
+
+hr {
+    margin-top: 2px;
+    margin-bottom: 2px;
+    opacity: 0.3;
+}
+
+.form-group label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+
+.back img{
+    position: absolute;
+    top: 113px;
+    left: 10vw;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.form-group input,
+.form-group textarea , .input_url {
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #1C1C1C;
+    background-color: #1C1C1C;
+    color: white;
+    font-family: "Inria Sans", sans-serif;
+    font-size: 16px;
+    outline: none;
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.form-actions button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-family: "Inria Sans", sans-serif;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.reset-button {
+    background-color: #1C1C1C;
+    color: white;
+}
+
+.reset-button:hover {
+    background-color: #333;
+}
+
+.submit-button {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.submit-button:hover {
+    scale: 1.03;
+}
+
+.image-upload {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.image-upload label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.image-preview {
+    width: 100%;
+    height: 500px;
+    padding: 10px;
+    border: 2px dashed #1C1C1C;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.image-preview img {
+    max-width: 100%;
+    max-height: 100%;
+    border-radius: 10px;
+}
+
+#no-image-text {
+    font-size: 16px;
+    color: #888;
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #0F0F0F;
+    margin-top: 40px;
+}
+
+/* Estilo do Toast Notification */
+#toast {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 1000;
+    display: none;
+}
+
+#toast.show {
+    display: block;
+}
+
+.toast-container {
+    width: 20rem;
+    background-color: #191919;
+    color: white;
+    border-radius: 0.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    animation: slideIn 0.5s ease-out;
+}
+
+.toast-container .toast-content {
+    flex: 1;
+}
+
+.toast-container .toast-content p {
+    margin: 0;
+}
+
+.toast-container .toast-content .toast-title {
+    font-weight: 600;
+    font-size: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+.toast-container .toast-content .toast-message {
+    font-size: 0.875rem;
+}
+
+.toast-container #closeToast {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: white;
+    margin-left: 1rem;
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.toast-container #closeToast:hover {
+    opacity: 0.8;
+}
+
+.toast-container #closeToast svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+/* Animação de entrada */
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Animação de saída */
+@keyframes slideOut {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+}
+
+.toast-container.hide {
+    animation: slideOut 0.5s ease-in forwards;
+}
+
+
+/* Responsividade */
+@media (max-width: 768px) {
+    nav {
+        padding: 10px 20px;
+    }
+
+    .searchbar .input input {
+        width: 50vw;
+    }
+
+    main.add-movie {
+        padding: 80px 20px 20px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    .form-container {
+        flex-direction: column;
+    }
+
+    .image-upload {
+        width: 100%;
+    }
+
+    .image-preview {
+        height: 300px;
+    }
+}

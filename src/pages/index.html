@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Um site de catálogo de filmes">
+    <meta name="keywords" content="cinema, catalogo, filmes">
+    <meta name="author" content="Nome do Autor">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filmfy</title>
+    <link rel="icon" href="../public/svg/favicon/Claquete.png" type="image/x-icon">
+    <link rel="stylesheet" href="../public/style/index.css">
+</head>
+<body>
+<header>
+    <nav>
+        <div class="logo">
+            <a href="index.html">FILM.FY</a>
+        </div>
+        <div class="searchbar">
+            <div class="input">
+                <input type="text" name="search-bar" id="search-bar" placeholder="Pesquisar Filme" autocomplete="off">
+                <div class="icon">
+                    <img src="../public/svg/search.svg" alt="Pesquisar">
+                </div>
+            </div>
+            <!-- Lista suspensa de resultados da busca -->
+            <div id="search-results" class="search-results"></div>
+        </div>
+        <div class="social">
+            <a href="create.html">
+                <img src="../public/svg/plus.svg" alt="Adicionar">
+            </a>
+        </div>
+    </nav>
+</header>
+
+<main>
+    <article>
+        <h2>Filmes Adicionados</h2>
+        <div class="cards" id="film-cards">
+            <!-- Os cards dos filmes serão gerados dinamicamente aqui -->
+        </div>
+    </article>
+
+    <article>
+        <h2>Favoritos</h2>
+        <div class="cards" id="favorite-cards">
+            <!-- Os cards dos filmes favoritos serão gerados dinamicamente aqui -->
+        </div>
+    </article>
+</main>
+
+
+<script src="../public/script/FilmService.js"></script>
+<script src="../public/script/index.js"></script>
+</body>
+</html>

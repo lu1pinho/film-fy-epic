@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Detalhes do filme">
+    <meta name="keywords" content="filme, detalhes, cinema">
+    <meta name="author" content="Nome do Autor">
+    <title>Detalhes do Filme - FILM.FY</title>
+    <link rel="stylesheet" href="../public/style/show.css">
+    <link rel="icon" href="../public/svg/favicon/Claquete.png" type="image/x-icon">
+</head>
+<body>
+<header>
+    <nav>
+        <div class="logo">
+            <a href="index.html">FILM.FY</a>
+        </div>
+        <div class="searchbar">
+            <div class="input">
+                <input type="text" placeholder="Pesquisar Filme" id="search-bar">
+                <div class="icon">
+                    <img src="../public/svg/search.svg" alt="Pesquisar">
+                </div>
+            </div>
+            <!-- Lista suspensa de resultados da busca -->
+            <div id="search-results" class="search-results"></div>
+        </div>
+        <div class="social">
+            <a href="create.html">
+                <img src="../public/svg/plus.svg" alt="Adicionar">
+            </a>
+        </div>
+    </nav>
+</header>
+
+<main class="movie-container">
+    <!-- Conteúdo Principal (Lateral Esquerda) -->
+    <div class="back" id="backbutton">
+        <img src="../public/svg/back.svg" alt="">
+    </div>
+    <div class="movie-detail">
+        <div class="movie-header">
+            <h1 id="movie-name">Carregando...</h1>
+            <p class="original-title" id="original-title">Título original: Carregando...</p>
+            <p class="year-runtime" id="year-runtime">Carregando...</p>
+        </div>
+
+        <div class="movie-description">
+            <h2>Descrição</h2>
+            <p id="description">Carregando...</p>
+        </div>
+
+        <hr>
+
+        <div class="movie-info">
+            <h2>Direção</h2>
+            <p id="director">Carregando...</p>
+
+            <hr>
+
+            <h2>Roteirista</h2>
+            <p id="writer">Carregando...</p>
+
+            <hr>
+
+            <h2>Artistas</h2>
+            <ul id="cast">
+                <!-- Os artistas serão adicionados dinamicamente aqui -->
+            </ul>
+        </div>
+
+        <hr>
+
+        <div class="movie-ratings">
+            <h2>Avaliações</h2>
+            <p><strong>Rotten Tomatoes:</strong> <span id="rotten-tomatoes">Carregando...</span></p>
+        </div>
+
+        <hr>
+
+        <div class="movie-actions">
+            <button class="mark-watched">Marcar como Assistido</button>
+            <button class="favorite">Favoritar</button>
+            <button class="delete">Deletar</button>
+        </div>
+    </div>
+
+    <!-- Banner do Filme (Lateral Direita) -->
+    <div class="movie-banner">
+        <img id="movie-banner" src="#" alt="Banner do Filme">
+    </div>
+
+    <!-- Modal de Confirmação -->
+    <div id="confirmation-modal" class="modal">
+        <div class="modal-content">
+            <p>Tem certeza que deseja deletar este filme? Esta ação é irreversível!</p>
+            <div class="modal-actions">
+                <button id="confirm-delete">Confirmar</button>
+                <button id="cancel-delete">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+
+<script src="../public/script/FilmService.js"></script>
+<script src="../public/script/show.js"></script>
+</body>
+</html>
