@@ -55,25 +55,34 @@ Projeto desenvolvido como parte do minicurso de **Desenvolvimento Web** para a E
    cd film-fy-epic
 
 3. **Acesse a página index.html**
+- No canto inferior direito, você verá um botão discreto chamado **"Local Store Management"**. Ele serve para que você possa **`exportar, importar e apagar`** os dados salvos no localStorage.
+  Para facilitar a adição de filmes, deixamos um arquivo chamado `localStorage_backup.json` disponível. Com ele, você pode importar os filmes rapidamente, sem precisar adicioná-los manualmente. Isso proporciona uma maneira prática e eficiente de gerenciar seus dados no aplicativo.
 
 ## Estrutura do Projeto
-``` 
-film-fy-epic/
-│
-├── index.html          # Página principal com a listagem de filmes e busca
-├── show.html           # Página de detalhes de um filme
-├── add.html            # Página para adicionar um novo filme
-├── css/
-│   ├── styles.css      # Estilos globais
-│   └── toast.css       # Estilos para as notificações toast
-├── js/
-│   ├── main.js         # Lógica principal da aplicação
-│   ├── show.js         # Lógica da página de detalhes do filme
-│   ├── add.js          # Lógica da página de adicionar filme
-│   └── FilmeService.js # Classe para gerenciar filmes, favoritos e assistidos
-└── README.md           # Documentação do projeto
+``` text
+FILMFY/
+├── film-fy-epic/ # Pasta do projeto principal
+├── localstorage/
+│ └── localStorage_backup.json # Backup dos dados do localStorage
+├── src/ # Código-fonte do projeto
+│ ├── pages/ 
+│ │ ├── create.html # Página para criar novos filmes
+│ │ ├── index.html # Página inicial
+│ │ ├── is_management.html # Página de gerenciamento (possivelmente)
+│ │ └── show.html # Página para exibir detalhes de um filme
+│ ├── public/ 
+│ ├── script/ 
+│ │ ├── FilmService.js # Classe para gerenciar filmes
+│ │ ├── form.js # Lógica do formulário
+│ │ ├── index.js # Lógica da página inicial
+│ │ └── show.js # Lógica da página de detalhes
+│ ├── style/ 
+│ │ ├── create.css 
+│ │ ├── index.css 
+│ │ └── show.css
+│ └── svg/ # Arquivos SVG (ícones, etc.)
+└── README.md # Documentação do projeto
 ```
-
 ## Informações
 * Autor: [lu1pinho](https://github.com/lu1pinho)
 * Email: oluisgustavoalves@icloud.com
