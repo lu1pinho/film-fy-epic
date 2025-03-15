@@ -80,3 +80,9 @@ film-fy-epic/
 * EPIC: https://epicteam.dev
 
 ## Galeria do Projeto
+![localhost_63342_FILMFY_src_pages_index html](https://github.com/user-attachments/assets/5270b015-fc3a-45ae-8854-a619f2ab2b4b)
+![localhost_63342_FILMFY_src_pages_show html_id=7](https://github.com/user-attachments/assets/39559e34-ffe3-4b06-81ce-7e0a5228de10)
+![localhost_63342_FILMFY_src_pages_show html_id=9](https://github.com/user-attachments/assets/6b550ff4-3d58-40a2-a61c-323bebe74e60)
+![localhost_63342_FILMFY_src_pages_create html](https://github.com/user-attachments/assets/5182dfd9-0176-4427-aedc-84578efb2669)
+
+
