@@ -22,16 +22,13 @@ Projeto desenvolvido como parte do minicurso de **Desenvolvimento Web** para a E
     - Marque filmes como assistidos para acompanhar o que já foi visto.
 
 - **Busca Dinâmica**:
-    - Busque filmes pelo nome em tempo real enquanto digita no campo de busca.
+    - Busque filmes pelo nome enquanto digita no campo de busca.
 
 - **Pré-visualização de Imagem**:
     - Ao adicionar uma URL de imagem, o sistema exibe uma pré-visualização antes de salvar o filme.
 
 - **Notificações (Toast)**:
     - Receba feedback visual ao adicionar, favoritar ou remover filmes.
-
-- **Semi Responsivo**:
-    - Interface semi adaptada para diferentes tamanhos de tela.
 
 ---
 
