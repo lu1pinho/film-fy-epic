@@ -52,7 +52,7 @@ Projeto desenvolvido como parte do minicurso de **Desenvolvimento Web** para a E
    cd film-fy-epic
 
 3. **Acesse a página index.html**
-- No canto inferior direito, você verá um botão discreto chamado **"Local Store Management"**. Ele serve para que você possa **`exportar, importar e apagar`** os dados salvos no localStorage.
+- No canto inferior direito, você verá um botão discreto chamado **"Local Storage Management"**. Ele serve para que você possa **`exportar, importar e apagar`** os dados salvos no localStorage.
   Para facilitar a adição de filmes, deixei um arquivo chamado `localStorage_backup.json` disponível. Com ele, você pode importar os filmes rapidamente para visualisar, sem precisar adicioná-los manualmente.
 
 ## Teste sem Clonar o Projeto
